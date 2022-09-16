@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types'
+import { connect } from "react-redux";
+
 import './BooksSummary.css';
 
 const BooksSummary = ({books}) => {
@@ -9,4 +12,12 @@ const BooksSummary = ({books}) => {
     )
 }
 
-export default BooksSummary
+const mapStateToProps = (state) => ({
+    books: state.booksStore
+  })
+
+BooksSummary.propTypes = {
+    books: PropTypes.array.isRequired
+}
+
+export default connect(mapStateToProps)(BooksSummary)

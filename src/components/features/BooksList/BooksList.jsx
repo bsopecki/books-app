@@ -2,12 +2,14 @@ import {
   ListGroup,
   ListGroupItem
 } from "react-bootstrap";
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 import BooksForm from "../../views/BooksForm/BooksForm";
 
 import "./BooksList.css";
 
-const BooksList = ({ books,addBook }) => {
+const BooksList = ({books}) => {
   
   return (
     <div>
@@ -22,9 +24,17 @@ const BooksList = ({ books,addBook }) => {
           </ListGroupItem>
         ))}
       </ListGroup>
-      <BooksForm  addBook={addBook}/>
+      {/* <BooksForm /> */}
     </div>
   );
 };
 
-export default BooksList;
+const mapStateToProps = (state) => ({
+  books: state.booksStore
+})
+
+BooksList.propTypes = {
+  books: PropTypes.array.isRequired
+}
+
+export default connect(mapStateToProps)(BooksList);
