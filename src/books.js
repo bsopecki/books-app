@@ -1,4 +1,4 @@
-export const books = [
+ const books = [
     {
         id:1,
         title: 'Of Mice and Man',
@@ -25,3 +25,5 @@ export const books = [
         description:'A shelter on the top of Kasprowy Wierch. A group of people decide to welcome the New Year in an unusual place. Among them, Jakub Tyszkiewicz, his wife Helena and his closest friend Staszek Krzeptowski, a highlander born at the foot of Giewont. One of the participants of the event falls down the stairs.'
     },
 ]
+
+export default books

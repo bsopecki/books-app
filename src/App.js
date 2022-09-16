@@ -6,7 +6,7 @@ import Header from "./components/views/Header/Header";
 import Sidebar from "./components/views/Sidebar/Sidebar";
 import BooksList from "./components/features/BooksList/BooksList";
 
-import { books } from "./books";
+import books from "./books";
 
 import "./App.css";
 
