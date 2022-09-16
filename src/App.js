@@ -27,7 +27,7 @@ const App = () => {
             </main>
           </Col>
           <Col xs="12" md="3">
-            <Sidebar />
+            <Sidebar books={booksData}/>
           </Col>
         </Row>
     </Container>

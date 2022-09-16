@@ -1,8 +1,12 @@
+import { ListGroup,ListGroupItem } from 'react-bootstrap';
+
 import './AuthorsList.css';
 
-const AuthorsList = () => {
+const AuthorsList = ({books}) => {
     return (
-        <p>TO DO: Authorlist</p>
+        <ListGroup>
+            {books.map(book=> <ListGroupItem key={book.id}>{book.author}</ListGroupItem>)}
+        </ListGroup>
     )
 }
 

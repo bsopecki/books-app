@@ -1,8 +1,11 @@
 import './BooksSummary.css';
 
-const BooksSummary = () => {
+const BooksSummary = ({books}) => {
     return (
-        <p>TODO: Books Summary</p>
+        <section className='mt-4'>
+            <h3>Books summary..</h3>
+            <p>There are {books.length} books in the app</p>
+        </section>
     )
 }
 
