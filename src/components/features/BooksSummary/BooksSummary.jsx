@@ -1,23 +1,23 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import './BooksSummary.css';
+import { countBooks } from "../../../redux/booksRedux.js";
 
-const BooksSummary = ({books}) => {
-    return (
-        <section className='mt-4'>
-            <h3>Books summary..</h3>
-            <p>There are {books.length} books in the app</p>
-        </section>
-    )
-}
+const BooksSummary = ({ booksLength }) => {
+  return (
+    <section className="mt-4">
+      <h3>Books summary..</h3>
+      <p>There are {booksLength} books in the app</p>
+    </section>
+  );
+};
 
 const mapStateToProps = (state) => ({
-    books: state.booksStore
-  })
+  booksLength: countBooks(state),
+});
 
 BooksSummary.propTypes = {
-    books: PropTypes.array.isRequired
-}
+  books: PropTypes.number,
+};
 
-export default connect(mapStateToProps)(BooksSummary)
+export default connect(mapStateToProps)(BooksSummary);

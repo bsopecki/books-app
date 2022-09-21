@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { useState } from "react";
 import {
   Form,
@@ -7,6 +9,8 @@ import {
   Button,
 } from "react-bootstrap";
 import shortid from "shortid";
+
+import { addBook } from "../../../redux/booksRedux";
 
 const BooksForm = ({ addBook }) => {
   const [title, setTitle] = useState("");
@@ -59,4 +63,12 @@ const BooksForm = ({ addBook }) => {
   );
 };
 
-export default BooksForm;
+const mapDispatchToProps = (dispatch) => ({
+  addBook: (book) => dispatch(addBook(book)),
+});
+
+BooksForm.propTypes = {
+  addBook: PropTypes.func,
+};
+
+export default connect(null, mapDispatchToProps)(BooksForm);
